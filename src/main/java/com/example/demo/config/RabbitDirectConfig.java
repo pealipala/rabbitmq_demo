@@ -16,7 +16,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitDirectConfig {
 
-    public final static String DIRECTNAME = "pealipala";
+    public final static String DIRECTNAME = "direct";
 
     @Bean
     Queue queue(){
