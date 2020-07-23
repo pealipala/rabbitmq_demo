@@ -12,7 +12,6 @@ import org.springframework.context.annotation.Configuration;
  * @version 1.0
  * @date 2020/7/23 20:51
  */
-//direct方式
 @Configuration
 public class RabbitDirectConfig {
 
