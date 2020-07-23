@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import com.example.demo.config.RabbitFanOutConfig;
+import com.example.demo.config.RabbitTopicConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,15 @@ class DemoApplicationTests {
     @Test
     void contextLoads2() {
         rabbitTemplate.convertAndSend(RabbitFanOutConfig.FANOUTNAME,null,"this is a fanOut");
+    }
+
+    @Test
+    void contextLoads3() {
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPICNAME,"apple.XXX","this is a topic about apple");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPICNAME,"xiaomi.XXX","this is a topic about xiaomi");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPICNAME,"phone","this is a topic about phone");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPICNAME,"apple.phone","this is a topic about applephone");
+        rabbitTemplate.convertAndSend(RabbitTopicConfig.TOPICNAME,"xiaomi.phone","this is a topic about xiaomiphone");
     }
 
 }
