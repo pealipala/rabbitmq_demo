@@ -1,5 +1,6 @@
 package com.example.demo;
 
+import com.example.demo.config.RabbitDirectConfig;
 import com.example.demo.config.RabbitFanOutConfig;
 import com.example.demo.config.RabbitHeaderConfig;
 import com.example.demo.config.RabbitTopicConfig;
@@ -19,6 +20,7 @@ class DemoApplicationTests {
     @Test
     void contextLoads1() {
         rabbitTemplate.convertAndSend("hello","this is a directTest");
+        rabbitTemplate.convertAndSend(RabbitDirectConfig.DIRECTNAME,"direct","this is a directTest");
     }
 
     @Test

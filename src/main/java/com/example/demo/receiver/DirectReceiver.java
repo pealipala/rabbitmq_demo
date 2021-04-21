@@ -14,6 +14,10 @@ public class DirectReceiver {
 
     @RabbitListener(queues = "hello")
     public void handleDirect(String msg){
-        System.out.println("handleDirect>>>>"+msg);
+        System.out.println("handleDirect1>>>>"+msg);
+    }
+    @RabbitListener(queues = "hello")
+    public void handleDirect2(String msg){
+        System.out.println("handleDirect2>>>>"+msg);
     }
 }
