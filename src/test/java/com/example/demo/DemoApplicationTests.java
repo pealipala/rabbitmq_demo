@@ -39,7 +39,7 @@ class DemoApplicationTests {
 
     @Test
     void contextLoads4() {
-        //headerĞèÒª¼üÖµ¶ÔÍêÈ«Æ¥Åä
+        //headerï¿½ï¿½Òªï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½È«Æ¥ï¿½ï¿½
         Message nameMsg = MessageBuilder.withBody("hello pealipala".getBytes()).setHeader("name","pealipala").build();
         Message ageMsg = MessageBuilder.withBody("hello pealipala".getBytes()).setHeader("age","22").build();
         rabbitTemplate.send(RabbitHeaderConfig.HEADERNAME,null,nameMsg);
