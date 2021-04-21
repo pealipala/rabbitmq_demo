@@ -17,6 +17,7 @@ class DemoApplicationTests {
     @Autowired
     RabbitTemplate rabbitTemplate;
 
+
     @Test
     void contextLoads1() {
         rabbitTemplate.convertAndSend("hello","this is a directTest");
